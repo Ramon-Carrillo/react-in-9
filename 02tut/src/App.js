@@ -14,11 +14,13 @@ function App() {
     <div className='App'>
       <Header />
       <Nav />
-      <Home />
-      <NewPost />
-      <PostPage />
-      <About />
-      <Missing />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/post' element={<NewPost />} />
+        <Route path='/post/:id' element={<PostPage />} />
+        <Route path='/about' element={<About />} />
+        <Route path='*' element={<Missing />} />
+      </Routes>
       <Footer />
     </div>
   );
